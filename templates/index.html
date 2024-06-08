@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Spam Classifier</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            resize: none;
+        }
+
+        button {
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+            font-size: 16px;
+            margin-left: 15px;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+
+        .result {
+            margin-top: 20px;
+        }
+
+        .spam {
+            color: red;
+            font-weight: bold;
+        }
+
+        .not-spam {
+            color: green;
+            font-weight: bold;
+        }
+
+        .contact, .about {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .contact h2, .about h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .contact p, .about p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Email Spam Classifier</h1>
+    <p>Welcome to the Email Spam Classifier! Enter your email content below and click "Classify" to determine if it is spam or not.</p>
+
+    <div class="container">
+        <form method="post" action="/">
+            <div class="form-group">
+                <textarea rows="12" name="content" placeholder="Enter your email here" autocomplete="off">{{ email }}</textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit">Classify</button>
+                <a href="/">Reset</a>
+            </div>
+        </form>
+        <div class="result">
+            {% if prediction is not none %}
+            <h2 class="{{ 'spam' if prediction == 1 else 'not-spam' }}">Result: {{ 'Spam' if prediction == 1 else 'Not Spam' }}</h2>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="contact">
+        <h2>Contact Us</h2>
+        <p>Phone: 0333-4567254</p>
+        <p>Email: <a href="mailto:talhaanwar116official@gmail.com">talhaanwar116official@gmail.com</a></p>
+        <p>Talha Anwar</p>
+    </div>
+
+    <div class="about">
+        <h2>About Us</h2>
+        <p>We are dedicated to providing state-of-the-art solutions for email spam detection. Our mission is to help users identify and filter out unwanted spam emails, improving productivity and ensuring a cleaner inbox. Our team is comprised of experts in machine learning and data analysis, committed to delivering high-quality and reliable services.</p>
+    </div>
+</body>
+
+</html>
