@@ -16,7 +16,3 @@ def model_predict(email):
     prediction = clf.predict(tokenized_email)  # Predict using the classifier
     prediction = 1 if prediction == 1 else -1  # If the email is spam, prediction should be 1
     return prediction
-
-# Example usage
-email = "Your email content here"
-print(model_predict(email))
