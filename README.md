@@ -11,22 +11,6 @@ The Email Spam Classifier is a web application that allows users to input email 
 - **API**: Use an API endpoint to classify email content programmatically.
 - **Database Storage**: Save classification results in an SQLite database.
 
-## Project Structure
-
-Email-Spam-Classifier/
-├── app.py # Main Flask application
-├── email_utils.py # Utility module containing the model_predict function
-├── setup_database.py # Script to set up the SQLite database and table
-├── templates/
-│ ├── index.html # Main HTML template for the classification form
-│ ├── history.html # HTML template to display classification history
-├── email_classification.db # SQLite database file
-├── credentials.json # OAuth 2.0 credentials for Gmail API (if applicable)
-├── token.pickle # OAuth 2.0 token for Gmail API (if applicable)
-├── requirements.txt # List of required Python packages
-└── README.md # Project documentation
-
-
 ## Setup and Installation
 
 ### Prerequisites
@@ -38,7 +22,7 @@ Email-Spam-Classifier/
 
 1. **Clone the repository**:
     ```sh
-    git clone https://github.com/yourusername/Email-Spam-Classifier.git
+    git clone https://github.com/TalhaAI/Email-Classification-using-FLask
     cd Email-Spam-Classifier
     ```
 
